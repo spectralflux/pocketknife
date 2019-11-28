@@ -1,0 +1,9 @@
+[package]
+name = "pk"
+version = "0.1.0"
+authors = ["spectralflux <spectralflux@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]
+clap = "2.33.0"
+dialoguer = "0.5.0"
