@@ -30,16 +30,19 @@ fn scrub() {
 }
 
 fn main() {
+    println!("☠ Pocketknife ☠");
     let matches = App::new("scrub")
         .args(&[Arg::with_name("command")
-            .help("the toolbox command to use")
+            .help("the command to use")
             .index(1)
             .required(false)])
         .get_matches();
 
     let command = matches.value_of("command");
     match command {
-        None => println!("No command given."),
+        None => println!(
+            "Commands available:\n   scrub: runs `git reset --hard`, with confirmation before nuke."
+        ),
         Some(command_str) => match command_str {
             "scrub" => scrub(),
             _ => println!("Unknown command."),
